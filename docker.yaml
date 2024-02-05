@@ -2,8 +2,7 @@
 - name: nginx 배포하기
   hosts: all
   become: yes
-
+  
   tasks:
-    - name: 배포할 Nginx 서비스 생성
-      command: "docker service create --name mynginx --replicas 3 --constraint 'node.role==worker' --with-registry-auth -p 8008:80 nginx"
-
+    - name: nginx
+      shell: docker service create --name mynginx --replicas 3 --constraint node.role==worker --with-registry-auth -p 8008:80 nginx 
