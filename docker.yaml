@@ -1,7 +1,7 @@
 ---
 - name: nginx 배포하기
-  hosts: worker
-  become: true
+  hosts: all
+  become: yes
 
   tasks:
     - name: 배포할 Nginx 서비스 생성
